@@ -17,9 +17,9 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "paths": {
-      "antd-mobile": ["../src/index.ts"],
-      "antd-mobile/src/*": ["../src/*"],
-      "antd-mobile/es/*": ["../src/*"]
+      "ts-library": ["../src/index.ts"],
+      "ts-library/src/*": ["../src/*"],
+      "ts-library/es/*": ["../src/*"]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "antd-mobile",
-  "version": "5.27.0",
+  "name": "ts-library",
+  "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
     "build": "gulp",
@@ -9,33 +9,17 @@
     "postinstall": "husky install",
     "test": "jest",
     "test-with-coverage": "jest --coverage",
-    "package-diff": "antd-tools run package-diff --path=./lib",
-    "pub": "npm run package-diff && npm publish ./lib",
-    "pub:alpha": "npm publish ./lib --tag alpha",
-    "pub:dev": "npm publish ./lib --tag dev"
+    "package-diff": "antd-tools run package-diff --path=./dist",
+    "pub": "npm run package-diff && npm publish ./dist",
+    "pub:alpha": "npm publish ./dist --tag alpha",
+    "pub:dev": "npm publish ./dist --tag dev"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.0.6",
-    "@rc-component/mini-decimal": "^1.0.1",
-    "@react-spring/web": "^9.5.5",
-    "@use-gesture/react": "10.2.20",
-    "ahooks": "^3.7.2",
-    "antd-mobile-icons": "^0.3.0",
-    "antd-mobile-v5-count": "^1.0.1",
-    "classnames": "^2.3.2",
     "dayjs": "^1.11.6",
     "lodash": "^4.17.21",
-    "rc-field-form": "~1.27.3",
-    "rc-util": "^5.24.8",
-    "react-is": "^17.0.2",
-    "runes": "^0.4.3",
-    "staged-components": "^1.1.3",
-    "tslib": "^2.4.1",
-    "use-sync-external-store": "^1.2.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.8.0",
-    "@ant-design/tools": "^16.0.0-alpha.3",
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.2",
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
@@ -71,6 +55,7 @@
     "@umijs/types": "^3.5.35",
     "@use-gesture/core": "10.2.20",
     "antd": "^4.24.3",
+    "antd-mobile": "^5.27.0",
     "autoprefixer": "^9.8.8",
     "babel-loader": "^8.3.0",
     "css-loader": "^6.7.2",
@@ -134,10 +119,10 @@
   "module": "./es/index.js",
   "types": "./es/index.d.ts",
   "typings": "./es/index.d.ts",
-  "unpkg": "./umd/antd-mobile.js",
-  "GravityCDN": "./umd/antd-mobile.js",
+  "unpkg": "./umd/ts-library.js",
+  "GravityCDN": "./umd/ts-library.js",
   "files": [
-    "./lib"
+    "./dist"
   ],
   "sideEffects": [
     "**/*.css",
@@ -152,7 +137,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ant-design/ant-design-mobile.git",
+    "url": "git+https://github.com/kecoyo/ts-library.git",
     "branch": "master",
     "platform": "github"
   }

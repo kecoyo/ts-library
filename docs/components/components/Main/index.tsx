@@ -61,18 +61,6 @@ export default () => {
         <MainSection isWidthScreen={isWidthScreen} />
       </div>
       <div className={styles.contentSection}>
-        {/* 高性能、可定制、原子化、流畅感 */}
-        <div className={styles.productIntroduce}>
-          {trans(productIntroduceEn, productIntroduce).map(product => (
-            <div className={styles.productItem} key={product.title}>
-              <img height={32} src={product.image} />
-              <div className={styles.productItemTitle}>{product.title}</div>
-              <div className={styles.productItemDescription}>
-                {product.description}
-              </div>
-            </div>
-          ))}
-        </div>
         {/* 设计语言与开发资源 */}
         <div className={styles.productResource}>
           <div className={styles.productResourceTitle}>
@@ -110,66 +98,6 @@ export default () => {
               </Card>
             ))}
           </div>
-          <Card
-            className={styles.productDesignValues}
-            bordered={false}
-            style={{
-              backgroundImage: `url(${getProductDesignValuesBackgroundImage(
-                isWidthScreen
-              )})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-          >
-            {trans(productDesignValuesEn, productDesignValues).map(value => (
-              <div key={value.title} className={styles.productDesignValueBody}>
-                <div className={styles.productDesignValuesContent}>
-                  <div className={styles.productDesignValuesTitle}>
-                    {value.title}
-                  </div>
-                  <div className={styles.productDesignValuesDescription}>
-                    {value.description}
-                  </div>
-                </div>
-                <div className={styles.productDesignValuesIconContainer}>
-                  {value.icons.map((icon, index) => (
-                    <div
-                      key={icon.text}
-                      className={styles.productDesignValuesIcon}
-                      id={`my_lottie_${index}`}
-                    >
-                      <Lottie
-                        options={{
-                          loop: false,
-                          autoplay: false,
-                          path: icon.lottie,
-                        }}
-                        eventListeners={[
-                          {
-                            eventName: 'complete',
-                            callback: () => {
-                              setStartAnimation(pre =>
-                                pre.map((item, idx) =>
-                                  idx === index ? false : item
-                                )
-                              )
-                            },
-                          },
-                        ]}
-                        height={62}
-                        width={62}
-                        isStopped={!startAnimation[index]}
-                        style={{ pointerEvents: 'none' }}
-                      />
-                      <div className={styles.productDesignValuesIconText}>
-                        {icon.text}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </Card>
         </div>
         {/* 新手指引 */}
         <div className={styles.guides}>
@@ -202,54 +130,6 @@ export default () => {
             ))}
           </div>
         </div>
-        {/* 精品资源 */}
-        <div className={styles.recommends}>
-          <div className={styles.recommendsTitle}>
-            {trans('Resources', '精品资源')}
-          </div>
-          <div className={styles.recommendsContent}>
-            {getRecommends(trans.en).map(recommend => (
-              <Card
-                className={styles.recommendCard}
-                bordered={false}
-                hoverable={true}
-                key={recommend.title}
-              >
-                <div
-                  className={styles.recommendCardBody}
-                  onClick={() => window.open(recommend.link)}
-                >
-                  <div className={styles.recommendImage}>
-                    <img src={recommend.image} width={50} />
-                  </div>
-                  <div className={styles.recommendCardContent}>
-                    <div className={styles.recommendCardTitle}>
-                      {recommend.title}
-                    </div>
-                    <div className={styles.recommendCardDescription}>
-                      {recommend.description}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-        {/* 谁在使用 */}
-        {trans.zh && (
-          <div className={styles.users}>
-            <div className={styles.usersTitle}>谁在使用</div>
-            <div className={styles.usersContent}>
-              {users.map(user => (
-                <img
-                  key={user.name}
-                  className={styles.userImage}
-                  src={user.image}
-                />
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )

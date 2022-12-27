@@ -1,19 +1,19 @@
-import { IConfig } from 'dumi'
-import { menus } from './menus'
-import { navs } from './navs'
+import { IConfig } from 'dumi';
+import { menus } from './menus';
+import { navs } from './navs';
 
-const shouldDisableCSSVar = Boolean(process.env.DISABLE_CSS_VAR)
+const shouldDisableCSSVar = Boolean(process.env.DISABLE_CSS_VAR);
 
 if (shouldDisableCSSVar) {
-  console.info('\nCSS Variables has been disabled for dev purpose.\n')
+  console.info('\nCSS Variables has been disabled for dev purpose.\n');
 }
 
-const pxToRem = require('postcss-pxtorem')
-const postcssDisableCSSVars = require('../scripts/postcss-disable-css-vars.js')
+const pxToRem = require('postcss-pxtorem');
+const postcssDisableCSSVars = require('../scripts/postcss-disable-css-vars.js');
 
 const config: IConfig = {
   mode: 'site',
-  title: 'Ant Design Mobile',
+  title: 'TS Library',
   logo: 'https://gw.alipayobjects.com/zos/bmw-prod/b874caa9-4458-412a-9ac6-a61486180a62.svg',
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg',
@@ -24,7 +24,7 @@ const config: IConfig = {
     passivePreview: true,
   },
   alias: {
-    'antd-mobile/es': process.cwd() + '/src',
+    'ts-library/es': process.cwd() + '/src',
     'demos': process.cwd() + '/src/demos/index.ts',
   },
   metas: [
@@ -35,7 +35,7 @@ const config: IConfig = {
     },
     {
       name: 'keywords',
-      content: 'antd-mobile, ant design mobile, React mobile components',
+      content: 'ts-library, React mobile components',
     },
     {
       name: 'description',
@@ -89,6 +89,6 @@ const config: IConfig = {
   // ssr: {},
   exportStatic: {},
   dynamicImport: {},
-}
+};
 
-export default config
+export default config;

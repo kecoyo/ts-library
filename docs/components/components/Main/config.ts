@@ -66,7 +66,7 @@ export const getProductResource = (isWideScreen: boolean, en: boolean) => [
       ? 'https://gw.alipayobjects.com/zos/bmw-prod/239bb8cf-3fcd-4cfe-bb5a-ba2d910342bc.svg'
       : 'https://gw.alipayobjects.com/zos/bmw-prod/613c0844-d32d-4b89-83f2-36bc6840628a.svg',
     buttonText: en ? 'Get Start' : '开始体验',
-    buttonLink: 'https://codesandbox.io/s/antd-mobile-snrxr?file=/src/App.tsx',
+    buttonLink: 'https://codesandbox.io/s/ts-library-snrxr?file=/src/App.tsx',
     target: '_blank',
   },
   {
@@ -154,7 +154,7 @@ export const getGuides = (isWideScreen: boolean, en: boolean) => [
     title: en ? 'Quick Start' : '快速上手',
     description: en
       ? 'Quickly start with installation and import'
-      : '轻松两步，快速实现安装和引入组件，antd-mobile 自动为你加载 css 样式文件。',
+      : '轻松两步，快速实现安装和引入组件，ts-library 自动为你加载 css 样式文件。',
     backgroundImage: isWideScreen
       ? 'https://gw.alipayobjects.com/zos/bmw-prod/f0556074-4581-42c4-9cf7-7b7072ed6a05.svg'
       : 'https://gw.alipayobjects.com/zos/bmw-prod/64172109-6ad4-4628-b3c9-24fd410329da.svg',

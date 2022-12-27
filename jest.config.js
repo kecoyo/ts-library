@@ -23,7 +23,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/src/tests/mocks/style-mock.js',
-    '^antd-mobile$': '<rootDir>/src/index.ts',
+    '^ts-library$': '<rootDir>/src/index.ts',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',

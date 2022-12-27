@@ -27,7 +27,7 @@ export default (props: { isWidthScreen: boolean }) => {
   return (
     <div className={styles.mainSectionContainer}>
       <div>
-        <div className={styles.mainSectionTitle}>Ant Design Mobile</div>
+        <div className={styles.mainSectionTitle}>TS Library</div>
         <div className={styles.mainSectionDescription}>
           {trans(
             'Research the final experience of mobile',

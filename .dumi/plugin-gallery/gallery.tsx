@@ -39,7 +39,7 @@ components.forEach(group => {
 export default props => {
   const [currentDemoIndex, setCurrentDemoIndex] = useState<number | null>(null)
   const [currentComponent, setCurrentComponent] = useState('')
-  const [title, setTitle] = useState('Ant Design Mobile')
+  const [title, setTitle] = useState('TS Library')
   const [searchValue, setSearchValue] = useState<string>('')
   const [componentGroups, setComponentGroups] = useState(components)
   const { history, match } = props
@@ -54,7 +54,7 @@ export default props => {
   useLayoutEffect(() => {
     const { component = '' } = match.params
     setCurrentComponent(component)
-    setTitle(componentToTitle[component] || 'Ant Design Mobile')
+    setTitle(componentToTitle[component] || 'TS Library')
   }, [match.params])
 
   useLayoutEffect(() => {
@@ -135,7 +135,7 @@ export default props => {
             alt='logo'
             className={styles.logo}
           />
-          <p>下面是一些 Ant Design Mobile 的组件 demo，可以点进去试一试</p>
+          <p>下面是一些 TS Library 的组件 demo，可以点进去试一试</p>
           <p>
             如果你想查阅完整的组件文档，请在桌面浏览器中访问：
             <a href={window.location.origin} target='_blank'>

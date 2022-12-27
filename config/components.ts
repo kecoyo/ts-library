@@ -1,11 +1,7 @@
 export const components = {
   common: [
-    '/components/button'
+    'components/tag'
   ],
-  layout: [
-    '/components/grid',
-  ],
-  dataDisplay: [
-    '/components/tag',
-  ],
+  layout: [],
+  dataDisplay: [],
 }

@@ -33,7 +33,7 @@ const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
     if (
       isCN &&
       typeof window !== undefined &&
-      window.location.host === 'ant-design-mobile.antgroup.com'
+      window.location.host === 'ts-library.antgroup.com'
     ) {
       return nav.filter(item => item.title !== '国内镜像')
     }

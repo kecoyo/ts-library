@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDirs": ["src", "config"],
     "target": "ES6",
     "moduleResolution": "node",
@@ -15,9 +15,9 @@
     "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2016", "DOM"],
     "paths": {
-      "antd-mobile": ["src/index.ts"],
-      "antd-mobile/src/*": ["src/*"],
-      "antd-mobile/es/*": ["src/*"],
+      "ts-library": ["src/index.ts"],
+      "ts-library/src/*": ["src/*"],
+      "ts-library/es/*": ["src/*"],
       "demos": ["src/demos/index.ts"],
       "testing": ["src/tests/testing"]
     },
