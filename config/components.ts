@@ -1,7 +1,5 @@
 export const components = {
-  common: [
-    'components/tag'
-  ],
+  common: ['components/tag'],
   layout: [],
   dataDisplay: [],
-}
+};

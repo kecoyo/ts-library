@@ -24,8 +24,6 @@
 $ npm install --save ts-library
 # or
 $ yarn add ts-library
-# or
-$ pnpm add ts-library
 ```
 
 - **Fast**: It is carefully optimized for harsh scenes, without configuration, you can have the best package size and ultimate performance.

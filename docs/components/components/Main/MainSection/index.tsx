@@ -1,53 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import { Button } from 'antd'
-import Lottie from 'react-lottie'
-import styles from './index.local.less'
-import { useTrans } from '../../../../hooks/useTrans'
+import React, { useState, useEffect } from 'react';
+import { Button } from 'antd';
+import Lottie from 'react-lottie';
+import styles from './index.local.less';
 
 export default (props: { isWidthScreen: boolean }) => {
-  const [startFireAnimation, setStartFireAnimation] = useState(false)
-  const [startResultAnimation, setStartResultAnimation] = useState(false)
-  const { isWidthScreen } = props
-
-  const trans = useTrans()
+  const [startFireAnimation, setStartFireAnimation] = useState(false);
+  const [startResultAnimation, setStartResultAnimation] = useState(false);
+  const { isWidthScreen } = props;
 
   useEffect(() => {
     document
       .querySelector('#calendarImage')
       ?.addEventListener('mouseenter', () => {
-        setStartFireAnimation(true)
-      })
+        setStartFireAnimation(true);
+      });
     document
       .querySelector('#resultImage')
       ?.addEventListener('mouseenter', () => {
-        setStartResultAnimation(true)
-      })
-  }, [])
+        setStartResultAnimation(true);
+      });
+  }, []);
 
   return (
     <div className={styles.mainSectionContainer}>
       <div>
         <div className={styles.mainSectionTitle}>TS Library</div>
         <div className={styles.mainSectionDescription}>
-          {trans(
-            'Research the final experience of mobile',
-            '探索移动端 Web 的体验极限'
-          )}
+          {'探索移动端 Web 的体验极限'}
         </div>
         <div className={styles.mainSectionButtonAction}>
           <Button
             shape='round'
             className={styles.buttonLeft}
-            href={trans('/guide/quick-start', '/zh/guide/quick-start')}
+            href={'/guide/quick-start'}
           >
-            {trans('Get Start', '开始使用')}
+            {'开始使用'}
           </Button>
           <Button
             shape='round'
             className={styles.buttonRight}
-            href={trans('/components', '/zh/components')}
+            href={'/components'}
           >
-            {trans('Preview Online', '在线体验')}
+            {'在线体验'}
           </Button>
         </div>
       </div>
@@ -56,9 +50,8 @@ export default (props: { isWidthScreen: boolean }) => {
           className={styles.calendarImage}
           id='calendarImage'
           style={{
-            backgroundImage: trans.en
-              ? 'url(https://gw.alipayobjects.com/zos/bmw-prod/8a7ff5c3-269f-41ad-bdc0-461aef57ad09.svg)'
-              : 'url(https://gw.alipayobjects.com/zos/bmw-prod/db18b4de-20f5-403e-9075-a413518934e3.svg)',
+            backgroundImage:
+              'url(https://gw.alipayobjects.com/zos/bmw-prod/db18b4de-20f5-403e-9075-a413518934e3.svg)',
           }}
         >
           <div className={styles.publishDayAnimation}>
@@ -66,15 +59,13 @@ export default (props: { isWidthScreen: boolean }) => {
               options={{
                 loop: false,
                 autoplay: false,
-                path: trans.en
-                  ? 'https://gw.alipayobjects.com/os/finxbff/lolita/1fde335f-a603-4594-b253-5fd23198a370/lottie.json'
-                  : 'https://gw.alipayobjects.com/os/finxbff/lolita/a31c67dd-ac41-4ca6-a92b-3e459e2035af/lottie.json',
+                path: 'https://gw.alipayobjects.com/os/finxbff/lolita/a31c67dd-ac41-4ca6-a92b-3e459e2035af/lottie.json',
               }}
               eventListeners={[
                 {
                   eventName: 'complete',
                   callback: () => {
-                    setStartFireAnimation(false)
+                    setStartFireAnimation(false);
                   },
                 },
               ]}
@@ -96,7 +87,7 @@ export default (props: { isWidthScreen: boolean }) => {
               {
                 eventName: 'complete',
                 callback: () => {
-                  setStartResultAnimation(false)
+                  setStartResultAnimation(false);
                 },
               },
             ]}
@@ -117,5 +108,5 @@ export default (props: { isWidthScreen: boolean }) => {
         ></img>
       </div>
     </div>
-  )
-}
+  );
+};

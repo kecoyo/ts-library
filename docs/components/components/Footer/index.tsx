@@ -10,11 +10,8 @@ import {
   QuestionCircleOutlined,
 } from '@ant-design/icons';
 import styles from './index.local.less';
-import { useTrans } from '../../../hooks/useTrans';
 
 export default () => {
-  const trans = useTrans();
-
   return (
     <div className={styles.footerContainer}>
       <div className={styles.copyright}>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { Button, Card } from 'antd'
-import Lottie from 'react-lottie'
-import { useSize } from 'ahooks'
-import { RightOutlined } from '@ant-design/icons'
-import MainSection from './MainSection'
+import React, { useEffect, useState, useRef } from 'react';
+import { Button, Card } from 'antd';
+import Lottie from 'react-lottie';
+import { useSize } from 'ahooks';
+import { RightOutlined } from '@ant-design/icons';
+import MainSection from './MainSection';
 import {
   productIntroduce,
   productIntroduceEn,
@@ -14,22 +14,20 @@ import {
   getGuides,
   getRecommends,
   users,
-} from './config'
-import styles from './index.local.less'
-import { useTrans } from '../../../hooks/useTrans'
+} from './config';
+import styles from './index.local.less';
 
 export default () => {
-  const [isWidthScreen, setIsWidthScreen] = useState(true)
+  const [isWidthScreen, setIsWidthScreen] = useState(true);
   const [startAnimation, setStartAnimation] = useState([
     false,
     false,
     false,
     false,
-  ])
-  const trans = useTrans()
+  ]);
 
   useEffect(() => {
-    setIsWidthScreen(screen?.width > 450)
+    setIsWidthScreen(screen?.width > 450);
     /** 绑定触发动画的事件，因为是mouseenter触发，因此无法进行通过事件委托绑定 */
     startAnimation.forEach((item, index) => {
       document
@@ -37,23 +35,23 @@ export default () => {
         ?.addEventListener('mouseenter', () => {
           setStartAnimation(pre =>
             pre.map((i, idx) => (index === idx ? true : i))
-          )
-        })
-    })
-  }, [])
+          );
+        });
+    });
+  }, []);
 
-  const containerRef = useRef<HTMLDivElement>(null)
-  const containerSize = useSize(containerRef)
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerSize = useSize(containerRef);
 
   useEffect(() => {
-    if (!containerSize?.width) return
+    if (!containerSize?.width) return;
 
     if (containerSize?.width > 450) {
-      setIsWidthScreen(true)
+      setIsWidthScreen(true);
     } else {
-      setIsWidthScreen(false)
+      setIsWidthScreen(false);
     }
-  }, [containerSize?.width])
+  }, [containerSize?.width]);
 
   return (
     <div className={styles.mainContainer} ref={containerRef} id='mainContainer'>
@@ -64,10 +62,10 @@ export default () => {
         {/* 设计语言与开发资源 */}
         <div className={styles.productResource}>
           <div className={styles.productResourceTitle}>
-            {trans('Design and Development', '语言设计与开发资源')}
+            {'语言设计与开发资源'}
           </div>
           <div className={styles.productResourceContent}>
-            {getProductResource(isWidthScreen, trans.en).map(resource => (
+            {getProductResource(isWidthScreen).map(resource => (
               <Card
                 className={styles.productResourceCard}
                 bordered={false}
@@ -101,9 +99,9 @@ export default () => {
         </div>
         {/* 新手指引 */}
         <div className={styles.guides}>
-          <div className={styles.guidesTitle}>{trans('Guide', '新手指引')}</div>
+          <div className={styles.guidesTitle}>{'新手指引'}</div>
           <div className={styles.guidesContent}>
-            {getGuides(isWidthScreen, trans.en).map(guide => (
+            {getGuides(isWidthScreen).map(guide => (
               <Card
                 className={styles.guideCard}
                 bordered={false}
@@ -132,5 +130,5 @@ export default () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,13 +1,13 @@
-import React, { useContext, useLayoutEffect, useState } from 'react'
-import type { IRouteComponentProps } from '@umijs/types'
-import { context, Link } from 'dumi/theme'
-import Navbar from '../components/Navbar'
-import SideMenu from '../components/SideMenu'
-import Dark from '../components/Dark'
-import { SlugList } from '../components/slug-list'
-import '../style/layout-default.less'
-import '../style/global.less'
-import styles from './index.less'
+import React, { useContext, useLayoutEffect, useState } from 'react';
+import type { IRouteComponentProps } from '@umijs/types';
+import { context, Link } from 'dumi/theme';
+import Navbar from '../components/Navbar';
+import SideMenu from '../components/SideMenu';
+import Dark from '../components/Dark';
+import { SlugList } from '../components/slug-list';
+import '../style/layout-default.less';
+import '../style/global.less';
+import styles from './index.less';
 
 const Features = (features: any) => (
   <div className='__dumi-default-layout-features'>
@@ -27,39 +27,37 @@ const Features = (features: any) => (
       </dl>
     ))}
   </div>
-)
+);
 
 const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
   const {
     config: { mode, repository },
     meta,
-    locale,
-  } = useContext(context)
-  const { url: repoUrl, branch } = repository
-  const showSideMenu = meta.sidemenu !== false && !meta.gapless
+  } = useContext(context);
+  const { url: repoUrl, branch } = repository;
+  const showSideMenu = meta.sidemenu !== false && !meta.gapless;
   const showSlugs =
     Boolean(meta.slugs?.length) &&
     (meta.toc === 'content' || meta.toc === undefined) &&
-    !meta.gapless
-  const isCN = !!locale && /^zh|cn$/i.test(locale)
-  const updatedTimeIns = new Date(meta.updatedTime)
+    !meta.gapless;
+  const updatedTimeIns = new Date(meta.updatedTime);
   const updatedTime: any = `${updatedTimeIns.toLocaleDateString([], {
     hour12: false,
-  })} ${updatedTimeIns.toLocaleTimeString([], { hour12: false })}`
-  const [darkSwitch, setDarkSwitch] = useState<boolean>(false)
+  })} ${updatedTimeIns.toLocaleTimeString([], { hour12: false })}`;
+  const [darkSwitch, setDarkSwitch] = useState<boolean>(false);
 
   useLayoutEffect(() => {
     if (window !== window.parent) {
-      return
+      return;
     }
 
     if (
       window.innerWidth <= 600 &&
       !window.location.pathname.startsWith('/gallery')
     ) {
-      window.location.href = '/gallery'
+      window.location.href = '/gallery';
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -69,7 +67,7 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
       data-show-slugs={String(showSlugs)}
       data-gapless={String(!!meta.gapless)}
       onClick={() => {
-        setDarkSwitch(false)
+        setDarkSwitch(false);
       }}
     >
       <Navbar
@@ -78,8 +76,8 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
           <Dark
             darkSwitch={darkSwitch}
             onDarkSwitchClick={ev => {
-              setDarkSwitch(val => !val)
-              ev.stopPropagation()
+              setDarkSwitch(val => !val);
+              ev.stopPropagation();
             }}
             isSideMenu={false}
           />
@@ -98,13 +96,9 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
               {meta.filePath && !meta.gapless && (
                 <div className='__dumi-default-layout-footer-meta'>
                   <Link to={`${repoUrl}/edit/${branch}/${meta.filePath}`}>
-                    {isCN ? `在 GitHub 上编辑此页` : `Edit this doc on GitHub`}
+                    {`在 GitHub 上编辑此页`}
                   </Link>
-                  <span
-                    data-updated-text={
-                      isCN ? '最后更新时间：' : 'Last update: '
-                    }
-                  >
+                  <span data-updated-text={'最后更新时间：'}>
                     {updatedTime}
                   </span>
                 </div>
@@ -117,7 +111,7 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

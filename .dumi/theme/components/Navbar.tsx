@@ -1,19 +1,19 @@
-import type { FC } from 'react'
-import React, { useContext, useMemo } from 'react'
-import { context, Link, NavLink } from 'dumi/theme'
-import classNames from 'classnames'
-import { useLocation } from 'dumi'
-import LocaleSelect from './LocaleSelect'
-import './Navbar.less'
-import homeStyle from './NavbarHome.less'
-import p from '../../../package.json'
-import SearchBar from './SearchBar'
-import { Popover } from 'antd-mobile'
-import { Action } from 'antd-mobile/es/components/popover'
+import type { FC } from 'react';
+import React, { useContext, useMemo } from 'react';
+import { context, Link, NavLink } from 'dumi/theme';
+import classNames from 'classnames';
+import { useLocation } from 'dumi';
+import LocaleSelect from './LocaleSelect';
+import './Navbar.less';
+import homeStyle from './NavbarHome.less';
+import p from '../../../package.json';
+import SearchBar from './SearchBar';
+import { Popover } from 'antd-mobile';
+import { Action } from 'antd-mobile/es/components/popover';
 
 interface INavbarProps {
-  location: any
-  darkPrefix?: React.ReactNode
+  location: any;
+  darkPrefix?: React.ReactNode;
 }
 
 const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
@@ -22,24 +22,21 @@ const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
     config: { title, logo },
     nav,
     locale,
-  } = useContext(context)
+  } = useContext(context);
 
-  const { pathname } = useLocation()
-  const isHomePage = pathname === base || pathname === base + '/'
+  const { pathname } = useLocation();
+  const isHomePage = pathname === base || pathname === base + '/';
 
   const navItems = useMemo(() => {
-    const isCN = !!locale && /^zh|cn$/i.test(locale)
-
     if (
-      isCN &&
       typeof window !== undefined &&
       window.location.host === 'ts-library.antgroup.com'
     ) {
-      return nav.filter(item => item.title !== '国内镜像')
+      return nav.filter(item => item.title !== '国内镜像');
     }
 
-    return nav
-  }, [nav, locale])
+    return nav;
+  }, [nav, locale]);
 
   return (
     <div
@@ -62,15 +59,15 @@ const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
       <div className='right-part'>
         <nav>
           {navItems.map(nav => {
-            const key = nav.title || nav.path
+            const key = nav.title || nav.path;
             const actions: Action[] =
               Boolean(nav.children?.length) &&
               nav.children.map(item => ({
                 text: item.title,
                 onClick: () => {
-                  window.open(item.path, '_blank')
+                  window.open(item.path, '_blank');
                 },
-              }))
+              }));
             const span = (
               <span key={key}>
                 {nav.path ? (
@@ -79,14 +76,14 @@ const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
                   <a>{nav.title}</a>
                 )}
               </span>
-            )
+            );
             return actions ? (
               <Popover.Menu trigger='click' actions={actions} key={key}>
                 {span}
               </Popover.Menu>
             ) : (
               span
-            )
+            );
           })}
           <div className='__dumi-default-navbar-tool'>
             <LocaleSelect location={location} />
@@ -95,7 +92,7 @@ const Navbar: FC<INavbarProps> = ({ location, darkPrefix }) => {
         </nav>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

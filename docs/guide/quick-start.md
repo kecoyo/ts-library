@@ -6,8 +6,6 @@
 $ npm install --save ts-library
 # or
 $ yarn add ts-library
-# or
-$ pnpm add ts-library
 ```
 
 ## 引入
@@ -20,7 +18,7 @@ import { Button } from 'ts-library'
 
 如果你开发的是阿里/蚂蚁内部项目，那么请额外阅读一下[这篇指引](https://yuque.antfin.com/ts-library/kfcgs3/md4or5)。
 
-如果你使用的是 umi 框架，那么推荐阅读一下常见问题中的 "[umi 项目安装 ts-library v5 后报错如何解决？](/zh/guide/faq#umi-%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85-ts-library-v5-%E5%90%8E%E6%8A%A5%E9%94%99%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F)"。
+如果你使用的是 umi 框架，那么推荐阅读一下常见问题中的 "[umi 项目安装 ts-library v5 后报错如何解决？](/guide/faq#umi-%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85-ts-library-v5-%E5%90%8E%E6%8A%A5%E9%94%99%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F)"。
 
 ## 兼容性
 
@@ -50,7 +48,7 @@ import { Button } from 'ts-library'
 
 对于 React，我们兼容的版本是 `^16.8.0` `^17.0.0` `^18.0.0`。
 
-由于 iOS 9 并不支持 CSS 变量，因此如果你需要支持 iOS 9，请参考 [这篇文档](/zh/guide/css-variables#css-变量自动降级) 启用 CSS 变量自动降级，并且将 babel 配置中的 target ios 设置为 `9`。
+由于 iOS 9 并不支持 CSS 变量，因此如果你需要支持 iOS 9，请参考 [这篇文档](/guide/css-variables#css-变量自动降级) 启用 CSS 变量自动降级，并且将 babel 配置中的 target ios 设置为 `9`。
 
 ## 在线体验
 

@@ -67,10 +67,6 @@ const config: IConfig = {
       async: true,
     },
   ],
-  locales: [
-    ['en', 'English'],
-    ['zh', '中文'],
-  ],
   extraPostCSSPlugins: [
     // pxToRem({
     //   rootValue: 50,
