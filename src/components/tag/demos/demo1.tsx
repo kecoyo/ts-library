@@ -1,6 +1,6 @@
-import React from 'react';
-import { Tag, Space } from 'antd-mobile';
-import { DemoBlock } from 'demos';
+import React from 'react'
+import { Tag, Space } from 'antd-mobile'
+import { DemoBlock } from 'demos'
 
 export default () => {
   return (
@@ -79,5 +79,5 @@ export default () => {
         </Space>
       </DemoBlock>
     </>
-  );
-};
+  )
+}

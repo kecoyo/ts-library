@@ -22,13 +22,5 @@ export const menus = {
       title: '通用',
       children: components.common,
     },
-    {
-      title: '布局',
-      children: components.layout,
-    },
-    {
-      title: '信息展示',
-      children: components.dataDisplay,
-    },
   ],
 };

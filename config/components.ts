@@ -1,5 +1,6 @@
 export const components = {
-  common: ['components/tag'],
-  layout: [],
-  dataDisplay: [],
+  common: [
+    'components/tag', //
+    'components/clamp',
+  ],
 };

@@ -1,4 +1,5 @@
 module.exports = {
+  printWidth: 150,
   semi: true,
   trailingComma: 'es5',
   tabWidth: 2,
@@ -7,11 +8,11 @@ module.exports = {
   jsxSingleQuote: true,
   quoteProps: 'preserve',
   arrowParens: 'avoid',
-  proseWrap: 'never',
+  proseWrap: 'preserve',
   overrides: [
     {
-      'files': ['*.md'],
-      'options': {
+      files: ['*.md'],
+      options: {
         embeddedLanguageFormatting: 'off',
       },
     },
